@@ -5,7 +5,7 @@ This source code is an implementation of our FODP algorithms. Our code consists 
 3. Runtime Evaluation (Figures 10, 11, 14)
 4. Others (Figures 5, 7, 12, 15)
 
-Below, we explain how to run our code for each part.
+Below, we explain how to run our code to obtain our experimental results for each part.
 
 # 1 Accuracy Evaluation
 ### 1.1 Execution Environment
@@ -15,7 +15,7 @@ TBD
 TBD
 
 ### 1.3 Running the Code
-
+TBD
 
 # 2 Robustness Evaluation
 ### 2.1 Execution Environment
@@ -64,19 +64,19 @@ Execute the main application with the generated dataset:
 ```
 $ ./app <file_name> <d> <flag>
 ```
-The flag is a 3-digit integer abc used to specify the algorithm and protocol selection:
+The flag is a 3-digit integer abc used to specify the algorithm and protocol types:
 
-a (Algorithm Selection)<br>
+a (Algorithm Type)<br>
 1: Our algorithm for small-domain data (Algorithm 1)<br>
 2: Our algorithm for large-domain data (Algorithm 2)<br>
 4: Histogram-based algorithm (Algorithm 5)<br>
 
-b (Method Selection)<br>
+b (Method Type)<br>
 1: FOUD<br>
 2: FOLNF<br>
 3: FOLNF*<br>
 
-c (Distribution Selection)<br>
+c (Distribution Type)<br>
 0: AGeo<br>
 1: 1Geo
 
@@ -113,3 +113,21 @@ folnf/artifact/Enclave/FOLNF/Recursive_OR_Shuffle.cpp
 - Oblivious Primitives:
 Defined in util_obl.h. <br>
 The floor_ln function employs a log-free (bit-manipulation-based) implementation to ensure high performance and stability within the SGX enclave.
+
+# 4 Others
+### Figure 5
+We directly obtained Figure 5 by `results/res_additive_error_bound.xlsx`. See this file.
+
+### Figure 7
+Execute the following code:
+```
+$ cd python/
+$ python bot_count.py <epsilon_E> <epsilon_I> <delta_I> <distribution type (1:AGeo,0:1Geo)>
+```
+By changing epsilon_E, epsilon_I, and delta_I, we obtained `results/res_bot_counts.xlsx`, from which we obtained Figure 7.
+
+### Figure 12
+We directly obtained Figure 12 by `results/res_FOUD_bound.xlsx`. See this file.
+
+### Figure 15
+TBD
