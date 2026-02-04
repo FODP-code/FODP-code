@@ -69,7 +69,7 @@ The flag is a 3-digit integer abc used to specify the algorithm and protocol typ
 a (Algorithm Type)<br>
 1: Our algorithm for small-domain data (Algorithm 1)<br>
 2: Our algorithm for large-domain data (Algorithm 2)<br>
-4: Histogram-based algorithm (Algorithm 5)<br>
+5: Histogram-based algorithm (Algorithm 5)<br>
 
 b (Method Type)<br>
 1: FOUD<br>
@@ -81,7 +81,7 @@ c (Distribution Type)<br>
 1: 1Geo
 
 Example: Algorithm 1 + FOLNF + AGeo → flag = 120.<br>
-Note: To select FOUD, set c = 0 (e.g., flag = 110 or 210). To select Algorithm 5, set b = 0 and c = 0 (e.g., flag = 400).
+Note: To select FOUD, set c = 0 (e.g., flag = 110 or 210). To select Algorithm 5, set b = 0 and c = 0 (e.g., flag = 500).
 
 
 Example Output: 
