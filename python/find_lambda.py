@@ -25,7 +25,7 @@ def find_min_lambda(d, eps_max, delta_max, theta1_max,
     for theta1 in theta_values:
         for theta2 in theta_values_one:
 
-            # Exponential search for λ
+            # Exponential search for lambda
             lam = 1
             ok = False
             while lam <= lambda_max:
