@@ -9,23 +9,91 @@ Below, we explain how to run our code to obtain our experimental results for eac
 
 # 1 Accuracy Evaluation
 ### 1.1 Execution Environment
-TBD
+
+All experiments were implemented in Java and are platform-independent.
+The code can be executed on any operating system that supports a standard Java Virtual Machine (JVM).
+
+- Programming language: Java
+- Java version: Java 8 or later
+- Operating system: Windows, macOS, or Linux
+- Java Virtual Machine: Any standard JVM
 
 ### 1.2 Installation
-TBD
+
+Compile the code in the `java/fodp` directory:
+
+   ```
+   javac -cp "lib/*" -d bin src/collusion/*.java src/composition/*.java src/encryption/*.java src/fodp/*.java src/hash/*.java src/main/*.java
+   ```
 
 ### 1.3 Running the Code
-TBD
+
+All commands below should be executed in the `java/fodp` directory.
+
+**Figure 6: Mean Squared Error (MSE) Comparison**
+
+| Position    | Dataset / Setting          | Command (On Linux and macOS, replace ; with : in the -cp option.)|
+| ----------- | -------------------------- | ----------------------------------------------------------------- |
+| Upper Left  | IPUMS, Small Domain        | `java -cp "lib/*;bin" main.SmallDomainMSE ipums`                  |
+| Upper Right | Localization, Small Domain | `java -cp "lib/*;bin" main.SmallDomainMSE localization`           |
+| Lower Left  | Foursquare, Large Domain   | `java -cp "lib/*;bin" main.LargeDomainMSE foursquare`             |
+| Lower Right | AOL, Large Domain          | `java -cp "lib/*;bin" main.LargeDomainMSE aol`                    |
+
+
+**Figure 8: Tau Optimization Results (AGeo)**
+
+| Position | Dataset    | Command (On Linux and macOS, replace ; with : in the -cp option.)                                                    |
+| -------- | ---------- | ----------------------------------------------------------- |
+| Left     | Foursquare | `java -cp "lib/*;bin" main.TauOptimization AGeo foursquare` |
+| Right    | AOL        | `java -cp "lib/*;bin" main.TauOptimization AGeo aol`        |
+
+
+**Figure 9: MSE for various values of b (AOL)**
+
+| Position | Method | Command (On Linux and macOS, replace ; with : in the -cp option.)                                              |
+| -------- | ------ | ----------------------------------------------------- |
+| Left     | FOUD   | `java -cp "lib/*;bin" main.LargeDomainMSE4b foud aol` |
+| Center   | AGeo   | `java -cp "lib/*;bin" main.LargeDomainMSE4b ageo aol` |
+| Right    | 1Geo   | `java -cp "lib/*;bin" main.LargeDomainMSE4b 1geo aol` |
+
+
+**Figure 16: Tau Optimization Results (1Geo)**
+
+| Position | Dataset    | Command (On Linux and macOS, replace ; with : in the -cp option.)                                                    |
+| -------- | ---------- | ----------------------------------------------------------- |
+| Left     | Foursquare | `java -cp "lib/*;bin" main.TauOptimization 1Geo foursquare` |
+| Right    | AOL        | `java -cp "lib/*;bin" main.TauOptimization 1Geo aol`        |
+
+
+**Figure 17: MSE for various values of b (Foursquare)**
+
+| Position | Method | Command (On Linux and macOS, replace ; with : in the -cp option.)                                                     |
+| -------- | ------ | ------------------------------------------------------------ |
+| Left     | FOUD   | `java -cp "lib/*;bin" main.LargeDomainMSE4b foud foursquare` |
+| Center   | AGeo   | `java -cp "lib/*;bin" main.LargeDomainMSE4b ageo foursquare` |
+| Right    | 1Geo   | `java -cp "lib/*;bin" main.LargeDomainMSE4b 1geo foursquare` |
+
 
 # 2 Robustness Evaluation
-### 2.1 Execution Environment
-TBD
 
-### 2.2 Installation
-TBD
+## 2.1 Execution Environment
 
-### 2.3 Running the Code
-TBD
+See Section 1.1 (Execution Environment).
+
+## 2.2 Installation
+
+See Section 1.2 (Installation).
+
+## 2.3 Running the Code
+
+All commands below should be executed in the `java/fodp` directory.
+
+### Figure 13: Robustness Evaluation under Collusion Attacks
+
+| Position | Scenario | Command |
+|---------|----------|---------|
+| Left | Collusion Setting 1 | `java -cp "lib/*;bin" main.Collusion1` |
+| Right | Collusion Setting 2 | `java -cp "lib/*;bin" main.Collusion2` |
 
 # 3 Runtime Evaluation
 
@@ -130,4 +198,8 @@ By changing epsilon_E, epsilon_I, and delta_I, we obtained `results/res_bot_coun
 We directly obtained Figure 12 by `results/res_FOUD_bound.xlsx`. See this file.
 
 ### Figure 15
-TBD
+
+Execute the following code in the `java/fodp` directory (on Linux and macOS, replace ; with : in the -cp option.):
+```
+java -cp "lib/*;bin" main.LargeDomainCost 
+```
