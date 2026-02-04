@@ -1,6 +1,6 @@
 # FODP (Fully Oblivious Differential Privacy)
 This source code is an implementation of our FODP algorithms. Our code consists of:
-1. Accuracy Evaluation (Figures 6, 8, 9)
+1. Accuracy Evaluation (Figures 6, 8, 9, 16, 17)
 2. Robustness Evaluation (Figure 13)
 3. Runtime Evaluation (Figures 10, 11, 14)
 4. Others (Figures 5, 7, 12, 15)
