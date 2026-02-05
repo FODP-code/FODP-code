@@ -23,7 +23,7 @@ The code can be executed on any operating system that supports a standard Java V
 Compile the code in the `java/fodp` directory:
 
    ```
-   javac -cp "lib/*" -d bin src/collusion/*.java src/composition/*.java src/encryption/*.java src/fodp/*.java src/hash/*.java src/main/*.java
+   $ javac -cp "lib/*" -d bin src/collusion/*.java src/composition/*.java src/encryption/*.java src/fodp/*.java src/hash/*.java src/main/*.java
    ```
 
 ### 1.3 Running the Code
@@ -201,5 +201,5 @@ We directly obtained Figure 12 by `results/res_FOUD_bound.xlsx`. See this file.
 
 Execute the following code in the `java/fodp` directory (on Linux and macOS, replace ; with : in the -cp option.):
 ```
-java -cp "lib/*;bin" main.LargeDomainCost 
+$ java -cp "lib/*;bin" main.LargeDomainCost 
 ```
